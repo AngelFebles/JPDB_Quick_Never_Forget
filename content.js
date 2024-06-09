@@ -15,8 +15,7 @@ function addButtonToEntries() {
         // Create the submit input element
         const newButton = document.createElement('input');
         newButton.type = 'button';
-        //newButton.style.padding = '10px';
-        
+            
     
         if (forgetFormAdd) {
           newButton.value = '強';
@@ -46,13 +45,11 @@ function addButtonToEntries() {
     });
   }
   
-  // Run the function initially
-  addButtonToEntries();
-  
 
-  document.addEventListener('DOMContentLoaded', addButtonToEntries);
+ document.addEventListener('DOMContentLoaded', addButtonToEntries());
 
-  // Use a MutationObserver to detect changes in the DOM and add the form to new entries
-  //const observer = new MutationObserver(addButtonToEntries);
-  //observer.observe(document.body, { childList: true, subtree: true });
-  
+  // JPDB uses a custom "virtual refresh" to load new content into the website
+  // We need to listen for this event and add the buttons to the new content since the page doesn't actually reload
+document.addEventListener("virtual-refresh", function() {
+    addButtonToEntries();
+});
