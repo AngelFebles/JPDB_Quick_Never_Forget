@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "JPDB Never Forget",
+    "version": "1.0",
+    "description": "Adds a 'Mark as never forget' button to jpdb.io entries.",
+    "permissions": [
+      "activeTab"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["*://jpdb.io/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
