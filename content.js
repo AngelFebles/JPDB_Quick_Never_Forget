@@ -15,6 +15,12 @@ function addButtonToEntries() {
         // Create the submit input element
         const newButton = document.createElement('input');
         newButton.type = 'button';
+        newButton.style.marginLeft = '5px';
+        newButton.style.paddingTop = '0px';
+        newButton.style.paddingBottom = '0px';
+        newButton.style.paddingLeft = '5px';
+        newButton.style.paddingRight = '5px';
+        newButton.style.alignContent = "start";
             
     
         if (forgetFormAdd) {
